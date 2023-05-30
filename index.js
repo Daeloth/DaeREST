@@ -20,11 +20,11 @@ app.use(express.json());
 app.listen(port, function() {
 	console.log(`Server started on port ${port}`);
 });
-app.get('/API/lashes/getPhotos', async (req, res) => {
+app.get('/lashes/getPhotos', async (req, res) => {
   var q = `
   SELECT * FROM foto;
   `
   var out = await con.query(q)
-  res.send(q.json())
+  res.send(out)
 })
 
